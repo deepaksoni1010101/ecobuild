@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "653573845543",
+    "project_id": "ecobuild-429d7",
+    "storage_bucket": "ecobuild-429d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653573845543:android:3e8d0d690d3f0ddb1dd402",
+        "android_client_info": {
+          "package_name": "com.example.ecobuild"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "653573845543-bhsi7rc1721athehi2pn0j1pdhbi7r8s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecobuild",
+            "certificate_hash": "cf15f5f74ff59b76d646ad9119fa2739923fb7fe"
+          }
+        },
+        {
+          "client_id": "653573845543-vusto4n283ro3u9i86oila246r67vakn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRY-HdkISvQVhskGuSGfUuEa4OGEDs8xk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "653573845543-vusto4n283ro3u9i86oila246r67vakn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
