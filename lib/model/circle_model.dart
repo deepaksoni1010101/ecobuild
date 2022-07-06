@@ -9,11 +9,14 @@ class MyDatas {
 }
 
 List<MyDatas> dataList = [
-  MyDatas("Men", "https://avatars.githubusercontent.com/u/73026702?v=4"),
+  MyDatas("Men",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"),
   MyDatas("Women",
-      "https://media-exp2.licdn.com/dms/image/C4D03AQFEinTZ9JQbcw/profile-displayphoto-shrink_400_400/0/1648991671046?e=1661990400&v=beta&t=st5tD0vYmu0ISC8JFJvoOvej81lKDwWlu93rEmeTvgs"),
+      "https://images.pexels.com/photos/3732652/pexels-photo-3732652.jpeg?auto=compress&cs=tinysrgb&w=1600"),
   MyDatas("Kids",
-      "https://res.cloudinary.com/practicaldev/image/fetch/s--H3ErTaXk--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/531379/d6ac24ed-bc25-46d7-8a24-d2b3d60db4c9.png"),
-  MyDatas("Pets", "https://avatars.githubusercontent.com/u/91661583?v=4"),
-  MyDatas("Beauty", "https://avatars.githubusercontent.com/u/108119062?v=4"),
+      "https://images.pexels.com/photos/459957/pexels-photo-459957.jpeg?auto=compress&cs=tinysrgb&w=1600"),
+  MyDatas("Pets",
+      "https://images.pexels.com/photos/10875180/pexels-photo-10875180.jpeg?auto=compress&cs=tinysrgb&w=1600"),
+  MyDatas("Beauty",
+      "https://images.pexels.com/photos/3993398/pexels-photo-3993398.jpeg?auto=compress&cs=tinysrgb&w=1600"),
 ];

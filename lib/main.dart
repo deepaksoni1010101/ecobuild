@@ -1,6 +1,7 @@
 import 'package:ecobuild/screens/homescreen.dart';
 import 'package:ecobuild/screens/login.dart';
 import 'package:ecobuild/screens/register.dart';
+import 'package:ecobuild/screens/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
         ),
-        home: const LoginScreen(),
+        home: const SplashScreen(),
       ),
     );
   }

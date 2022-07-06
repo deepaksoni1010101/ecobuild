@@ -109,6 +109,9 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           SizedBox(
+            height: 15,
+          ),
+          SizedBox(
             height: 330,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
@@ -118,12 +121,37 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 20,
           ),
-          Container(
-            height: 70,
-            width: 370,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(40), color: Colors.purple),
-            child: const TextField(),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 15, right: 15, left: 15),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  hintText: 'Find Something',
+                  filled: true,
+                  fillColor: Colors.purple,
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.only(top: 5, right: 30),
+                    child: Icon(
+                      Icons.filter_list,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.only(left: 15, top: 1),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      maxRadius: 25,
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.grey,
+                        size: 30,
+                      ),
+                    ),
+                  )),
+            ),
           ),
         ],
       ),

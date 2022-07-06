@@ -134,7 +134,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePage(),
+                                    builder: (context) => RegisterScreen(),
                                   ));
                             },
                           )
@@ -181,7 +181,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const RegisterScreen(),
+              builder: (context) => const HomePage(),
             ));
       } else {
         Fluttertoast.showToast(msg: "Somthing Went Wrong");

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ecobuild/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -15,7 +16,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   String gender = 'Male';
   int id = 1;
-  String? _dateInput;
+  TextEditingController _dateInput = TextEditingController();
   // TextEditingController _dateInput = TextEditingController();
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _lastNameController = TextEditingController();
@@ -86,6 +87,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           // height: MediaQuery.of(context).size.width / 3,
                           child: Center(
                               child: TextField(
+                        controller: _dateInput,
                         decoration: InputDecoration(
                             prefixIcon: Icon(
                               Icons.date_range_outlined,
@@ -113,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             print(
                                 formattedDate); //formatted date output using intl package =>  2021-03-16
                             setState(() {
-                              _dateInput =
+                              _dateInput.text =
                                   formattedDate; //set output date to TextField value.
                             });
                           } else {}
@@ -177,8 +179,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           onPressed: () {
                             print(_firstNameController.text);
                             print(_lastNameController.text);
-                            print(_dateInput);
+                            print(_dateInput.text);
                             print(gender);
+
+                            submit();
+
+                            // Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()))
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -215,8 +221,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return users
         .add({
           'first_name': _firstNameController.text,
-          'last_name ': _lastNameController,
-          'dob': _dateInput,
+          'last_name ': _lastNameController.text,
+          'dob': _dateInput.text,
           'gender': gender,
         })
         .then((value) => print("User Added"))
