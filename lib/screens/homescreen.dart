@@ -16,36 +16,36 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: 70,
-        title: const Center(
-            child: Text(
-          "Collections",
-          style: TextStyle(color: Colors.black),
-        )),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SignUpScreen(),
-                ));
-          },
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.black,
-              ))
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   toolbarHeight: 70,
+      //   title: const Center(
+      //       child: Text(
+      //     "Collections",
+      //     style: TextStyle(color: Colors.black),
+      //   )),
+      //   leading: IconButton(
+      //     icon: const Icon(
+      //       Icons.arrow_back_ios,
+      //       color: Colors.black,
+      //     ),
+      //     onPressed: () {
+      //       Navigator.push(
+      //           context,
+      //           MaterialPageRoute(
+      //             builder: (context) => const SignUpScreen(),
+      //           ));
+      //     },
+      //   ),
+      //   actions: [
+      //     IconButton(
+      //         onPressed: () {},
+      //         icon: const Icon(
+      //           Icons.shopping_cart_outlined,
+      //           color: Colors.black,
+      //         ))
+      //   ],
+      // ),
       body: Column(
         children: [
           const SizedBox(
@@ -121,38 +121,38 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 15, right: 15, left: 15),
-            child: TextFormField(
-              decoration: const InputDecoration(
-                  hintText: 'Find Something',
-                  filled: true,
-                  fillColor: Colors.purple,
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black),
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                  suffixIcon: Padding(
-                    padding: EdgeInsets.only(top: 5, right: 30),
-                    child: Icon(
-                      Icons.filter_list,
-                      color: Colors.white,
-                      size: 30,
-                    ),
-                  ),
-                  prefixIcon: Padding(
-                    padding: EdgeInsets.only(left: 15, top: 1),
-                    child: CircleAvatar(
-                      backgroundColor: Colors.white,
-                      maxRadius: 25,
-                      child: Icon(
-                        Icons.search,
-                        color: Colors.grey,
-                        size: 30,
-                      ),
-                    ),
-                  )),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(bottom: 15, right: 15, left: 15),
+          //   child: TextFormField(
+          //     decoration: const InputDecoration(
+          //         hintText: 'Find Something',
+          //         filled: true,
+          //         fillColor: Colors.purple,
+          //         border: OutlineInputBorder(
+          //             borderSide: BorderSide(color: Colors.black),
+          //             borderRadius: BorderRadius.all(Radius.circular(20))),
+          //         suffixIcon: Padding(
+          //           padding: EdgeInsets.only(top: 5, right: 30),
+          //           child: Icon(
+          //             Icons.filter_list,
+          //             color: Colors.white,
+          //             size: 30,
+          //           ),
+          //         ),
+          //         prefixIcon: Padding(
+          //           padding: EdgeInsets.only(left: 15, top: 1),
+          //           child: CircleAvatar(
+          //             backgroundColor: Colors.white,
+          //             maxRadius: 25,
+          //             child: Icon(
+          //               Icons.search,
+          //               color: Colors.grey,
+          //               size: 30,
+          //             ),
+          //           ),
+          //         )),
+          //   ),
+          // ),
         ],
       ),
     );

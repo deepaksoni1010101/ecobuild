@@ -1,6 +1,7 @@
 import 'package:ecobuild/constants/constants.dart';
 import 'package:ecobuild/screens/homescreen.dart';
 import 'package:ecobuild/screens/login.dart';
+import 'package:ecobuild/screens/navigationscreen.dart';
 import 'package:ecobuild/screens/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -181,7 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomePage(),
+              builder: (context) => const NavigationScreen(),
             ));
       } else {
         Fluttertoast.showToast(msg: "Somthing Went Wrong");
