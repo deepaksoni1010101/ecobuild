@@ -25,7 +25,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
 
   int index = 0;
   final screens = [
-    NewHome(),
+    HomePage(),
     FavoritePage(),
     CartPage(),
     ProfilePage(),

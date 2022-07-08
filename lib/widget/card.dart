@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import '../screens/products.dart';
 
 class CardScreen extends StatefulWidget {
-  const CardScreen({Key? key}) : super(key: key);
+  final image, name, price;
+
+  const CardScreen({Key? key, this.image, this.name, this.price})
+      : super(key: key);
 
   @override
   State<CardScreen> createState() => _CardScreenState();
@@ -29,9 +32,10 @@ class _CardScreenState extends State<CardScreen> {
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20)),
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              "https://yt3.ggpht.com/ytc/AKedOLTYWSzYOUv2cQhYqkcv0oCCwmrXsjC-r8UDn28F2g=s900-c-k-c0x00ffffff-no-rj"))),
+                      image: DecorationImage(image: NetworkImage(
+
+                          // "https://yt3.ggpht.com/ytc/AKedOLTYWSzYOUv2cQhYqkcv0oCCwmrXsjC-r8UDn28F2g=s900-c-k-c0x00ffffff-no-rj"
+                          widget.image))),
                 ),
                 Positioned(
                     right: 7,
@@ -48,7 +52,7 @@ class _CardScreenState extends State<CardScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text(
-                  "Rs: 10000T\nBlack",
+                  "Rs: ${widget.price}\n${widget.name}",
                   style: TextStyle(fontSize: 20),
                 ),
                 FloatingActionButton(
@@ -60,7 +64,7 @@ class _CardScreenState extends State<CardScreen> {
                         ));
                   },
                   child: Icon(
-                    Icons.add,
+                    Icons.open_in_new,
                     color: Colors.black,
                   ),
                   foregroundColor: Colors.white,
