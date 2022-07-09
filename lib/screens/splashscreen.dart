@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:ecobuild/constants/constants.dart';
+import 'package:ecobuild/screens/homescreen.dart';
 import 'package:ecobuild/screens/login.dart';
 import 'package:ecobuild/screens/signup.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const SignUpScreen())));
+            MaterialPageRoute(builder: (context) => const HomePage())));
   }
 
   @override

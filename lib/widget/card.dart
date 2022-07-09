@@ -38,6 +38,13 @@ class _CardScreenState extends State<CardScreen> {
                           widget.image))),
                 ),
                 Positioned(
+                    left: 7,
+                    top: 7,
+                    child: Icon(
+                      Icons.add_shopping_cart,
+                      size: 30,
+                    )),
+                Positioned(
                     right: 7,
                     top: 7,
                     child: FavoriteButton(
