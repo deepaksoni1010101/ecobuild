@@ -5,9 +5,15 @@ import 'package:flutter/material.dart';
 import '../screens/products.dart';
 
 class CardScreen extends StatefulWidget {
-  final image, name, price;
+  final image, name, price, Id, description;
 
-  const CardScreen({Key? key, this.image, this.name, this.price})
+  const CardScreen(
+      {Key? key,
+      required this.image,
+      required this.name,
+      required this.price,
+      required this.Id,
+      required this.description})
       : super(key: key);
 
   @override
@@ -68,7 +74,13 @@ class _CardScreenState extends State<CardScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CartPage(),
+                          builder: (context) => CartPage(
+                            name: widget.name,
+                            image: widget.image,
+                            Id: widget.Id,
+                            description: widget.description,
+                            price: widget.price,
+                          ),
                         ));
                   },
                   child: Icon(
@@ -87,6 +99,8 @@ class _CardScreenState extends State<CardScreen> {
                             name: widget.name,
                             image: widget.image,
                             price: widget.price,
+                            description: widget.description,
+                            Id: widget.Id,
                           ),
                         ));
                   },

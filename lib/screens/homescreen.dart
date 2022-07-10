@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecobuild/widget/circlewidget.dart';
 import 'package:ecobuild/screens/signup.dart';
@@ -59,20 +61,27 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text(
-                  "Collections",
-                  style: TextStyle(fontSize: 30),
-                ),
-                IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.more_horiz,
-                      size: 33,
-                    ))
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Collections",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                  SizedBox(
+                    width: 140,
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.more_horiz,
+                        size: 33,
+                      )),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+                ],
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -114,12 +123,13 @@ class _HomePageState extends State<HomePage> {
                 //     itemCount: dataList.length,
                 //     itemBuilder: (context, index) => CardScreen()),
                 ),
-            SizedBox(
-              height: 20,
+            Divider(
+              height: 30,
+              color: Color.fromARGB(255, 202, 202, 202),
+              thickness: 5,
             ),
-
             const SizedBox(
-              height: 20,
+              height: 5,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -156,6 +166,8 @@ class _HomePageState extends State<HomePage> {
                           image: data['productImage'],
                           name: data['productName'],
                           price: data['productPrice'],
+                          Id: data['productId'],
+                          description: data['productDescription'],
                         );
                         // ListTile(
                         //   leading: Image(image: NetworkImage(data['product_image'])),

@@ -5,10 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ProductsScreen extends StatefulWidget {
-  final image, name, price;
+  final image, name, price, Id, description;
 
   const ProductsScreen(
-      {Key? key, required this.image, required this.name, required this.price})
+      {Key? key,
+      required this.image,
+      required this.name,
+      required this.price,
+      required this.Id,
+      required this.description})
       : super(key: key);
 
   @override
