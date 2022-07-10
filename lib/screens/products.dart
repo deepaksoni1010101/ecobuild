@@ -7,7 +7,8 @@ import 'package:flutter/rendering.dart';
 class ProductsScreen extends StatefulWidget {
   final image, name, price;
 
-  const ProductsScreen({Key? key, this.image, this.name, this.price})
+  const ProductsScreen(
+      {Key? key, required this.image, required this.name, required this.price})
       : super(key: key);
 
   @override
@@ -80,8 +81,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
                           children: [
                             CircleAvatar(
                               maxRadius: 100,
-                              backgroundImage: NetworkImage(
-                                  "https://avatars.githubusercontent.com/u/91661583?v=4"),
+                              backgroundImage: NetworkImage(widget.image),
                             ),
                           ],
                         )),
@@ -108,12 +108,12 @@ class _ProductsScreenState extends State<ProductsScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "Men Navy",
+                      widget.name,
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      "Rs: 1200T",
+                      "Rs: ${widget.price}",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                     )

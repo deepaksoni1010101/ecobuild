@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecobuild/model/circlewidget.dart';
+import 'package:ecobuild/widget/circlewidget.dart';
 import 'package:ecobuild/screens/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +16,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final Stream<QuerySnapshot> _usersStream =
       FirebaseFirestore.instance.collection('product').snapshots();
+
+  final Stream<QuerySnapshot> _categoryStream =
+      FirebaseFirestore.instance.collection('category').snapshots();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -77,7 +80,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
                 height: 150,
                 child: StreamBuilder<QuerySnapshot>(
-                  stream: _usersStream,
+                  stream: _categoryStream,
                   builder: (context, snapshot) {
                     if (snapshot.hasError) {
                       return Text('Something went wrong');
@@ -93,8 +96,8 @@ class _HomePageState extends State<HomePage> {
                         Map<String, dynamic> data =
                             document.data()! as Map<String, dynamic>;
                         return CircleWidget(
-                          image: data['productImage'],
-                          name: data['productName'],
+                          image: data['categoryImage'],
+                          name: data['categoryName'],
                         );
                         // ListTile(
                         //   leading: Image(image: NetworkImage(data['product_image'])),

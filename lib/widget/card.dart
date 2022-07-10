@@ -1,3 +1,4 @@
+import 'package:ecobuild/screens/cart.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
@@ -37,13 +38,13 @@ class _CardScreenState extends State<CardScreen> {
                           // "https://yt3.ggpht.com/ytc/AKedOLTYWSzYOUv2cQhYqkcv0oCCwmrXsjC-r8UDn28F2g=s900-c-k-c0x00ffffff-no-rj"
                           widget.image))),
                 ),
-                Positioned(
-                    left: 7,
-                    top: 7,
-                    child: Icon(
-                      Icons.add_shopping_cart,
-                      size: 30,
-                    )),
+                // Positioned(
+                //     left: 7,
+                //     top: 7,
+                //     child: Icon(
+                //       Icons.add_shopping_cart,
+                //       size: 30,
+                //     )),
                 Positioned(
                     right: 7,
                     top: 7,
@@ -67,7 +68,26 @@ class _CardScreenState extends State<CardScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ProductsScreen(),
+                          builder: (context) => CartPage(),
+                        ));
+                  },
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.black,
+                  ),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.white,
+                ),
+                FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ProductsScreen(
+                            name: widget.name,
+                            image: widget.image,
+                            price: widget.price,
+                          ),
                         ));
                   },
                   child: Icon(
@@ -78,7 +98,7 @@ class _CardScreenState extends State<CardScreen> {
                   backgroundColor: Colors.white,
                 )
               ],
-            )
+            ),
           ],
         ),
       ),
