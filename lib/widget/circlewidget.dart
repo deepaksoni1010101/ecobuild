@@ -3,9 +3,10 @@ import 'package:ecobuild/screens/categoryscreen.dart';
 import 'package:flutter/material.dart';
 
 class CircleWidget extends StatefulWidget {
-  final image, name;
+  final String image, name;
 
-  const CircleWidget({Key? key, this.image, this.name}) : super(key: key);
+  const CircleWidget({Key? key, required this.image, required this.name})
+      : super(key: key);
 
   @override
   State<CircleWidget> createState() => _CircleWidgetState();

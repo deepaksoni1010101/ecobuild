@@ -19,8 +19,11 @@ class _HomePageState extends State<HomePage> {
   final Stream<QuerySnapshot> _usersStream =
       FirebaseFirestore.instance.collection('product').snapshots();
 
-  final Stream<QuerySnapshot> _categoryStream =
-      FirebaseFirestore.instance.collection('category').snapshots();
+  final Stream<QuerySnapshot> _categoryStream = FirebaseFirestore.instance
+      .collection('products1')
+      .doc('gjx2oopfI8FUYaSGC7Uf')
+      .collection('category')
+      .snapshots();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -106,6 +109,7 @@ class _HomePageState extends State<HomePage> {
                 child: StreamBuilder<QuerySnapshot>(
                   stream: _categoryStream,
                   builder: (context, snapshot) {
+                    print('show data ${snapshot.data!.size}');
                     if (snapshot.hasError) {
                       return Text('Something went wrong');
                     }
@@ -117,11 +121,12 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       children:
                           snapshot.data!.docs.map((DocumentSnapshot document) {
+                        print(document.id);
                         Map<String, dynamic> data =
                             document.data()! as Map<String, dynamic>;
                         return CircleWidget(
-                          image: data['categoryImage'],
-                          name: data['categoryName'],
+                          image: data['catimage'],
+                          name: data['catename'],
                         );
                         // ListTile(
                         //   leading: Image(image: NetworkImage(data['product_image'])),
