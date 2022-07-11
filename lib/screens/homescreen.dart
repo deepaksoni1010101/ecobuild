@@ -25,6 +25,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Collections',
+            style: TextStyle(color: Colors.black),
+          ),
+          // centerTitle: true,
+          backgroundColor: Colors.white,
+          // elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+          actions: [
+            IconButton(
+                onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined))
+          ],
+        ),
+
         backgroundColor: Colors.white,
         // appBar: AppBar(
         //   backgroundColor: Colors.white,
@@ -58,31 +73,31 @@ class _HomePageState extends State<HomePage> {
         // ),
         body: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Text(
-                    "Collections",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  SizedBox(
-                    width: 140,
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.more_horiz,
-                        size: 33,
-                      )),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
-                ],
-              ),
-            ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.start,
+            //     children: [
+            //       const Text(
+            //         "Collections",
+            //         style: TextStyle(fontSize: 30),
+            //       ),
+            //       SizedBox(
+            //         width: 140,
+            //       ),
+            //       IconButton(
+            //           onPressed: () {},
+            //           icon: const Icon(
+            //             Icons.more_horiz,
+            //             size: 33,
+            //           )),
+            //       IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart))
+            //     ],
+            //   ),
+            // ),
             const SizedBox(
               height: 10,
             ),
@@ -167,7 +182,10 @@ class _HomePageState extends State<HomePage> {
                           name: data['productName'],
                           price: data['productPrice'],
                           Id: data['productId'],
-                          description: data['productDescription'],
+                          discription: data['productDiscription'],
+                          image1: data['image1'],
+                          image2: data['image2'],
+                          image3: data['image3'],
                         );
                         // ListTile(
                         //   leading: Image(image: NetworkImage(data['product_image'])),

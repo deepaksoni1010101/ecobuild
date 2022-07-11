@@ -1,35 +1,46 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecobuild/constants/constants.dart';
 import 'package:ecobuild/screens/homescreen.dart';
+import 'package:email_validator/email_validator.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ProductsScreen extends StatefulWidget {
-  final image, name, price, Id, description;
+  final image, name, price, Id, description, image1, image2, image3;
 
-  const ProductsScreen(
-      {Key? key,
-      required this.image,
-      required this.name,
-      required this.price,
-      required this.Id,
-      required this.description})
-      : super(key: key);
+  const ProductsScreen({
+    Key? key,
+    required this.image,
+    required this.name,
+    required this.price,
+    required this.Id,
+    required this.description,
+    required this.image1,
+    required this.image2,
+    required this.image3,
+  }) : super(key: key);
 
   @override
   State<ProductsScreen> createState() => _ProductsScreenState();
 }
 
 class _ProductsScreenState extends State<ProductsScreen> {
-  List<String> categories = [
-    'About',
-    'Price',
-    'Colors',
-    'Comments',
-    'Similar products',
-    'Photos',
-  ];
   int selectedIndex = 0;
+  var activePage = 1;
+  late PageController _pageController;
+  // List<String> images = [
+  //   "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
+  //   "https://wallpaperaccess.com/full/2637581.jpg",
+  //   "https://uhdwallpapers.org/uploads/converted/20/01/14/the-mandalorian-5k-1920x1080_477555-mm-90.jpg"
+  // ];
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   _pageController = PageController(viewportFraction: 0.8);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -155,7 +166,111 @@ class _ProductsScreenState extends State<ProductsScreen> {
                     ),
                   ],
                   indicatorSize: TabBarIndicatorSize.tab,
-                )
+                ),
+                Expanded(
+                    child: TabBarView(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(15.0),
+                      padding: const EdgeInsets.all(3.0),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 183, 232, 255),
+                          border: Border.all(color: Colors.black)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          widget.description,
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                        child: ListView(
+                      children: [
+                        CarouselSlider(
+                            items: [
+                              Container(
+                                  margin: EdgeInsets.all(6),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                          image: NetworkImage(widget.image1),
+                                          fit: BoxFit.cover))),
+                              Container(
+                                  margin: EdgeInsets.all(6),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                          image: NetworkImage(widget.image2),
+                                          fit: BoxFit.cover))),
+                              Container(
+                                  margin: EdgeInsets.all(6),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                      image: DecorationImage(
+                                          image: NetworkImage(widget.image3),
+                                          fit: BoxFit.cover))),
+                            ],
+                            options: CarouselOptions(
+                              height: 400.0,
+                              enlargeCenterPage: true,
+                              autoPlay: true,
+                              aspectRatio: 16 / 9,
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enableInfiniteScroll: true,
+                              autoPlayAnimationDuration:
+                                  Duration(microseconds: 2000),
+                              viewportFraction: 0.8,
+                            ))
+                      ],
+                    )
+                        // PageView.builder(
+                        //   itemCount: 3,
+                        //   pageSnapping: true,
+                        //   controller: _pageController,
+                        //   onPageChanged: (page) {
+                        //     setState(() {
+                        //       activePage = page;
+                        //     });
+                        //   },
+                        //   itemBuilder: (context, pagePosition) {
+                        //     return Container(
+                        //       margin: EdgeInsets.all(10),
+                        //       child: Image.network(images[pagePosition]),
+                        //     );
+                        //   },
+                        // ),
+                        ),
+                    Container(
+                      color: Colors.brown,
+                    ),
+                    Container(
+                      color: Colors.cyanAccent,
+                    ),
+                    Container(
+                      color: Colors.indigo,
+                    ),
+                  ],
+                ))
+                // TabBarView(children: <Widget>[
+                //   Center(
+                //     child: Text(widget.description),
+                //   ),
+                //   Center(
+                //     child: Text(widget.description),
+                //   ),
+                //   Center(
+                //     child: Text(widget.description),
+                //   ),
+                //   Center(
+                //     child: Text(widget.description),
+                //   ),
+                //   Center(
+                //     child: Text(widget.description),
+                //   ),
+                // ])
 
                 //
 

@@ -27,7 +27,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
   final screens = [
     HomePage(),
     FavoritePage(),
-    CartPage(),
+    // CartPage(),
     ProfilePage(),
   ];
   @override

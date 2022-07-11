@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../screens/products.dart';
 
 class CardScreen extends StatefulWidget {
-  final image, name, price, Id, description;
+  final image, name, price, Id, discription, image1, image2, image3;
 
   const CardScreen(
       {Key? key,
@@ -13,7 +13,10 @@ class CardScreen extends StatefulWidget {
       required this.name,
       required this.price,
       required this.Id,
-      required this.description})
+      required this.discription,
+      required this.image1,
+      required this.image2,
+      required this.image3})
       : super(key: key);
 
   @override
@@ -23,97 +26,118 @@ class CardScreen extends StatefulWidget {
 class _CardScreenState extends State<CardScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 375,
-      width: 280,
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 250,
-                  width: 250,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20)),
-                      image: DecorationImage(image: NetworkImage(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProductsScreen(
+                name: widget.name,
+                image: widget.image,
+                price: widget.price,
+                description: widget.discription,
+                Id: widget.Id,
+                image1: widget.image1,
+                image2: widget.image2,
+                image3: widget.image3,
+              ),
+            ));
+      },
+      child: Container(
+        height: 375,
+        width: 280,
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: 250,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20)),
+                        image: DecorationImage(image: NetworkImage(
 
-                          // "https://yt3.ggpht.com/ytc/AKedOLTYWSzYOUv2cQhYqkcv0oCCwmrXsjC-r8UDn28F2g=s900-c-k-c0x00ffffff-no-rj"
-                          widget.image))),
-                ),
-                // Positioned(
-                //     left: 7,
-                //     top: 7,
-                //     child: Icon(
-                //       Icons.add_shopping_cart,
-                //       size: 30,
-                //     )),
-                Positioned(
-                    right: 7,
-                    top: 7,
-                    child: FavoriteButton(
-                      valueChanged: (_isFavorite) {
-                        print('Is Favorite $_isFavorite)');
-                      },
-                    )),
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  "Rs: ${widget.price}\n${widget.name}",
-                  style: TextStyle(fontSize: 20),
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CartPage(
-                            name: widget.name,
-                            image: widget.image,
-                            Id: widget.Id,
-                            description: widget.description,
-                            price: widget.price,
-                          ),
-                        ));
-                  },
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.black,
+                            // "https://yt3.ggpht.com/ytc/AKedOLTYWSzYOUv2cQhYqkcv0oCCwmrXsjC-r8UDn28F2g=s900-c-k-c0x00ffffff-no-rj"
+                            widget.image))),
                   ),
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.white,
-                ),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ProductsScreen(
-                            name: widget.name,
-                            image: widget.image,
-                            price: widget.price,
-                            description: widget.description,
-                            Id: widget.Id,
-                          ),
-                        ));
-                  },
-                  child: Icon(
-                    Icons.open_in_new,
-                    color: Colors.black,
+                  // Positioned(
+                  //     left: 7,
+                  //     top: 7,
+                  //     child: Icon(
+                  //       Icons.add_shopping_cart,
+                  //       size: 30,
+                  //     )),
+                  Positioned(
+                      right: 7,
+                      top: 7,
+                      child: FavoriteButton(
+                        valueChanged: (_isFavorite) {
+                          print('Is Favorite $_isFavorite)');
+                        },
+                      )),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Text(
+                    "Rs: ${widget.price}\n${widget.name}",
+                    style: TextStyle(fontSize: 20),
                   ),
-                  foregroundColor: Colors.white,
-                  backgroundColor: Colors.white,
-                )
-              ],
-            ),
-          ],
+                  FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CartPage(
+                              name: widget.name,
+                              image: widget.image,
+                              Id: widget.Id,
+                              description: widget.discription,
+                              price: widget.price,
+                            ),
+                          ));
+                    },
+                    child: Icon(
+                      Icons.add,
+                      color: Colors.black,
+                    ),
+                    foregroundColor: Colors.white,
+                    backgroundColor: Colors.white,
+                  ),
+                  // FloatingActionButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //         context,
+                  //         MaterialPageRoute(
+                  //           builder: (context) => ProductsScreen(
+                  //             name: widget.name,
+                  //             image: widget.image,
+                  //             price: widget.price,
+                  //             description: widget.discription,
+                  //             Id: widget.Id,
+                  //             image1: widget.image1,
+                  //             image2: widget.image2,
+                  //             image3: widget.image3,
+                  //           ),
+                  //         ));
+                  //   },
+                  //   child: Icon(
+                  //     Icons.open_in_new,
+                  //     color: Colors.black,
+                  //   ),
+                  //   foregroundColor: Colors.white,
+                  //   backgroundColor: Colors.white,
+                  // )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
