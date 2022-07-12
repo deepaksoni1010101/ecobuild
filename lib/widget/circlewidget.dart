@@ -1,12 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecobuild/model/circle_model.dart';
-import 'package:ecobuild/screens/categoryscreen.dart';
+import 'package:ecobuild/screens/category.dart';
+// import 'package:ecobuild/screens/categoryscreen.dart';
 import 'package:flutter/material.dart';
 
 class CircleWidget extends StatefulWidget {
-  final String image, name;
+  final String image, name, documentId;
 
-  const CircleWidget({Key? key, required this.image, required this.name})
-      : super(key: key);
+  const CircleWidget({
+    Key? key,
+    required this.documentId,
+    required this.image,
+    required this.name,
+  }) : super(key: key);
 
   @override
   State<CircleWidget> createState() => _CircleWidgetState();
@@ -16,6 +22,10 @@ class _CircleWidgetState extends State<CircleWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CategoryPage()));
+      },
       child: Container(
         margin: EdgeInsets.all(10.0),
         height: 115,

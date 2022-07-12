@@ -2,7 +2,7 @@ import 'dart:ffi';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecobuild/widget/circlewidget.dart';
-import 'package:ecobuild/screens/signup.dart';
+import 'package:ecobuild/screens/Login/signup.dart';
 import 'package:flutter/material.dart';
 
 import '../model/circle_model.dart';
@@ -127,6 +127,7 @@ class _HomePageState extends State<HomePage> {
                         return CircleWidget(
                           image: data['catimage'],
                           name: data['catename'],
+                          documentId: document.id,
                         );
                         // ListTile(
                         //   leading: Image(image: NetworkImage(data['product_image'])),

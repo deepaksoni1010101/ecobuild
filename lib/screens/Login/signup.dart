@@ -1,8 +1,8 @@
 import 'package:ecobuild/constants/constants.dart';
 import 'package:ecobuild/screens/homescreen.dart';
-import 'package:ecobuild/screens/login.dart';
+import 'package:ecobuild/screens/Login/login.dart';
 import 'package:ecobuild/screens/navigationscreen.dart';
-import 'package:ecobuild/screens/register.dart';
+import 'package:ecobuild/screens/Login/register.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

@@ -1,6 +1,6 @@
 import 'package:ecobuild/constants/constants.dart';
 import 'package:ecobuild/screens/homescreen.dart';
-import 'package:ecobuild/screens/signup.dart';
+import 'package:ecobuild/screens/Login/signup.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

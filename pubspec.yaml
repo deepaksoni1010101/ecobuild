@@ -46,10 +46,22 @@ dependencies:
   intl: ^0.17.0
   cloud_firestore: ^3.2.1
   carousel_slider: ^4.1.1
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  flutter_launcher_icons: "^0.9.2"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/icon.png"
+
+
+  # optionally, as transparency is not allowed on app store
+  # remove_alpha_ios: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

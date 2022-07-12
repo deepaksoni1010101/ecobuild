@@ -4,7 +4,7 @@ import 'package:ecobuild/screens/homescreen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../constants/constants.dart';
+import 'package:ecobuild/constants/constants.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
