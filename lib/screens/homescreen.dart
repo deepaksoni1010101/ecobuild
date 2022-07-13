@@ -1,11 +1,8 @@
-import 'dart:ffi';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecobuild/widget/circlewidget.dart';
-import 'package:ecobuild/screens/Login/signup.dart';
+
 import 'package:flutter/material.dart';
 
-import '../model/circle_model.dart';
 import '../widget/card.dart';
 
 class HomePage extends StatefulWidget {

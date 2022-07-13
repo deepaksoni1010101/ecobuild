@@ -1,11 +1,10 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecobuild/model/circle_model.dart';
 import 'package:ecobuild/screens/category.dart';
 // import 'package:ecobuild/screens/categoryscreen.dart';
 import 'package:flutter/material.dart';
 
 class CircleWidget extends StatefulWidget {
   final String image, name, documentId;
+  // var targetPage;
 
   const CircleWidget({
     Key? key,

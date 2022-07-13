@@ -1,10 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecobuild/constants/constants.dart';
 import 'package:ecobuild/screens/homescreen.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class ProductsScreen extends StatefulWidget {
   final image, name, price, Id, description, image1, image2, image3;
@@ -28,7 +26,7 @@ class ProductsScreen extends StatefulWidget {
 class _ProductsScreenState extends State<ProductsScreen> {
   int selectedIndex = 0;
   var activePage = 1;
-  late PageController _pageController;
+  // late PageController _pageController;
   // List<String> images = [
   //   "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
   //   "https://wallpaperaccess.com/full/2637581.jpg",
@@ -37,7 +35,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
 
   // @override
   // void initState() {
-  //   // TODO: implement initState
+  //
   //   super.initState();
   //   _pageController = PageController(viewportFraction: 0.8);
   // }

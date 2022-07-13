@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ecobuild/model/cardmode..dart';
 import 'package:flutter/material.dart';
 
 class NewHome extends StatefulWidget {

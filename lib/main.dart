@@ -1,6 +1,4 @@
-import 'package:ecobuild/screens/homescreen.dart';
-import 'package:ecobuild/screens/Login/login.dart';
-import 'package:ecobuild/screens/Login/register.dart';
+import 'package:ecobuild/screens/apidatashow.dart';
 import 'package:ecobuild/screens/splashscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +23,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: Colors.white,
         ),
-        home: const SplashScreen(),
+        home: ApiDataShow(),
+        //  SplashScreen(),
       ),
     );
   }

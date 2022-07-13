@@ -1,12 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecobuild/constants/constants.dart';
-import 'package:ecobuild/screens/cart.dart';
 import 'package:ecobuild/screens/favorite.dart';
 import 'package:ecobuild/screens/homescreen.dart';
-import 'package:ecobuild/screens/newhome.dart';
 import 'package:ecobuild/screens/profile.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({Key? key}) : super(key: key);
