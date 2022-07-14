@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 import 'dart:convert';
@@ -60,8 +61,11 @@ class ProductApi {
       };
 }
 
-Future<List<ProductApi>> getData() async {
+// Future<List<ProductApi>>
+getData() async {
   List<ProductApi> cData = [];
+
+  final json = await rootBundle.loadString("lib/jsondata/json1.json");
 
   final response =
       await http.get(Uri.parse("https://dummyjson.com/products/1"));
@@ -72,12 +76,12 @@ Future<List<ProductApi>> getData() async {
     //   ProductApi obj = ProductApi.fromJson(element);
     //   cData.add(obj);
     // });
+    List rData = jsonDecode(json);
 
-    Map<String, dynamic> rData = jsonDecode(response.body);
-    print(rData);
-    ProductApi obj = ProductApi.fromJson(rData);
-    cData.add(obj);
-    print(cData[0].brand);
+    rData.forEach((element) {
+      ProductApi obj = ProductApi.fromJson(element);
+      cData.add(obj);
+    });
     return cData;
   } else {
     print("Failed");

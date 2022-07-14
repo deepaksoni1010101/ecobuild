@@ -40,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               Container(
                   // padding: const EdgeInsets.only(left: 35, top: 130),
-                  // child: const Text('Welcome\nBack',
+                  // child: const Text('ProductApi\nBack',
                   //     style: TextStyle(color: Colors.red, fontSize: 33)),
                   ),
               SingleChildScrollView(

@@ -1,4 +1,5 @@
 import 'package:ecobuild/model/productapi.dart';
+import 'package:ecobuild/model/products100.dart';
 import 'package:flutter/material.dart';
 
 class ApiDataShow extends StatefulWidget {
@@ -32,17 +33,25 @@ class _ApiDataShowState extends State<ApiDataShow> {
                     if (snapshot.hasData) {
                       List<ProductApi> dData =
                           snapshot.data as List<ProductApi>;
-                      return Column(
-                        children: dData
-                            .map((e) => Card(
-                                  child: Column(
-                                    children: [
-                                      Text(e.title),
-                                      Image.network(e.thumbnail)
-                                    ],
-                                  ),
-                                ))
-                            .toList(),
+                      return SizedBox(
+                        height: 600,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: dData
+                                .map((e) => Card(
+                                      child: Column(
+                                        children: [
+                                          Text(e.title),
+                                          Image(
+                                              image: NetworkImage(e.thumbnail)),
+                                          Text(e.price.toString()),
+                                          Text(e.discountPercentage.toString())
+                                        ],
+                                      ),
+                                    ))
+                                .toList(),
+                          ),
+                        ),
                       );
                     } else {
                       return CircularProgressIndicator();
